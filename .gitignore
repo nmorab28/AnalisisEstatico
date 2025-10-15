@@ -1,0 +1,32 @@
+# Archivos de configuración de Eclipse
+.classpath
+.project
+.settings/
+
+# Archivos de IntelliJ IDEA
+.idea/
+*.iml
+
+# Archivos de compilación
+bin/
+out/
+classes/
+target/
+build/
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
+
+# Archivos de log
+*.log
+
+# Archivos de clase Java
+*.class
+
+# Archivos temporales
+*.tmp
+*.swp
+
+# Archivos de entorno
+.env
