@@ -29,6 +29,6 @@ jobs:
           javac -d classes/production/AnalisisEstatico $(find src -name "*.java")
 
       - name: SonarQube Scan
-        uses: SonarSource/sonarqube-scan-action@fd88b7d3c6f2f9a1e6e3b6c8b9f4a2d3c1e7a9b2
+        uses: SonarSource/sonarqube-scan-action@v6
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
