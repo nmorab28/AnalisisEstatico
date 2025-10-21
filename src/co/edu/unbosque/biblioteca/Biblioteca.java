@@ -6,32 +6,44 @@ import java.util.logging.Logger;
 
 public class Biblioteca {
     private static final Logger logger = AppLogger.getLogger();
-    private ArrayList<Libro> catalogo = new ArrayList<>();
+    private final ArrayList<Libro> catalogo = new ArrayList<>();
 
     public void agregarLibro(Libro libro) {
         try {
             catalogo.add(libro);
-            logger.info("Libro agregado al catálogo: " + libro.obtenerInformacion());
-        } catch (Exception e) {
+            if (logger.isLoggable(java.util.logging.Level.INFO)) {
+                logger.info("Libro agregado al catálogo: " + libro.obtenerInformacion());
+            }
+        } catch (RuntimeException e) {
             logger.severe("Error al agregar libro: " + e.getMessage());
         } finally {
-            logger.fine("Finalizó el intento de agregar libro.");
+            if (logger.isLoggable(java.util.logging.Level.FINE)) {
+                logger.fine("Finalizó el intento de agregar libro.");
+            }
         }
     }
 
     public void listarCatalogo() {
-        logger.info("Listando catálogo de libros...");
+        if (logger.isLoggable(java.util.logging.Level.INFO)) {
+            logger.info("Listando catálogo de libros...");
+        }
         for (Libro libro : catalogo) {
-            logger.info(libro.obtenerInformacion());
+            if (logger.isLoggable(java.util.logging.Level.INFO)) {
+                logger.info(libro.obtenerInformacion());
+            }
         }
     }
 
     public void agregarLibro1(Libro libro) {
         if (catalogo.contains(libro)) {
-            logger.warning("El libro ya existe en el catálogo.");
+            if (logger.isLoggable(java.util.logging.Level.WARNING)) {
+                logger.warning("El libro ya existe en el catálogo.");
+            }
         } else {
             catalogo.add(libro);
-            logger.info("Libro agregado con verificación: " + libro.obtenerInformacion());
+            if (logger.isLoggable(java.util.logging.Level.INFO)) {
+                logger.info("Libro agregado con verificación: " + libro.obtenerInformacion());
+            }
         }
     }
 }
