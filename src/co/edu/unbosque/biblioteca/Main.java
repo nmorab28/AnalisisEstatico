@@ -20,6 +20,6 @@ public class Main {
         biblioteca.listarCatalogo();
 
         logger.info("Fin de la ejecución principal");
-        //Prueba
+        //Prueba2
     }
 }
