@@ -1,10 +1,10 @@
 package co.edu.unbosque.biblioteca;
 
-class Libro {
-    private String titulo;
-    private String autor;
+public class Libro {
+    private final String titulo;
+    private final String autor;
 
-    public Libro(String titulo, String autor) {
+    public Libro(final String titulo, final String autor) {
         this.titulo = titulo;
         this.autor = autor;
     }
@@ -18,10 +18,6 @@ class Libro {
     }
 
     public String obtenerInformacion() {
-        return "Libro: " + titulo + " - Autor: " + autor;
+        return String.format("Libro: %s - Autor: %s", titulo, autor);
     }
 }
-
-
-
-
